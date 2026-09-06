@@ -1,0 +1,22 @@
+assist_task:
+  description: >
+    Help the student with the request below. Use the conversation so far for
+    context (it may be empty on the first turn).
+
+    Conversation so far:
+    {conversation_history}
+
+    Current request:
+    "{user_request}"
+
+    Pick the minimal set of tools the request actually needs. For course/notes
+    questions, search the study material before answering. For a durable new
+    personal fact, save it to memory. For any calculation, use the calculator.
+
+  expected_output: >
+    A single clear, direct answer in the student's language. Ground
+    document/course answers in retrieved passages and name the source file.
+    Add a short source line when web search or study material was used.
+    Keep it concise.
+
+  agent: assistant

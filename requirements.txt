@@ -1,0 +1,7 @@
+# Runtime dependencies (used by Streamlit Community Cloud).
+# For local dev prefer: uv sync
+crewai[tools]>=1.15.10,<2.0.0
+ddgs>=9.15.0
+model2vec>=0.9.0
+pypdf>=6.17.0
+streamlit>=1.63.0

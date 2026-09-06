@@ -1,0 +1,10 @@
+.env
+__pycache__/
+.DS_Store
+
+# generated at runtime
+logs.txt
+knowledge/.rag_index.npz
+knowledge/.rag_index.json
+.pytest_cache/
+.streamlit/secrets.toml

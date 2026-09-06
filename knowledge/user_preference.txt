@@ -1,0 +1,5 @@
+User name is Farheen Fatima.
+User is an AI & Data Science student.
+User is interested in AI Agents, Machine Learning, and Data Science.
+User is learning CrewAI and building AI projects.
+[remembered 2026-09-06] Student's machine learning exam is on 15 October.
