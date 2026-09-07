@@ -23,6 +23,14 @@ def _memory_file() -> Path:
     return Path(__file__).resolve().parents[3] / "knowledge" / "user_preference.txt"
 
 
+def memory_facts() -> list[str]:
+    """Every stored line of the personal profile (for display in the UI)."""
+    path = _memory_file()
+    if not path.exists():
+        return []
+    return [ln.strip() for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+
+
 class PersonalMemoryTool(BaseTool):
     name: str = "Personal Memory"
     description: str = (
