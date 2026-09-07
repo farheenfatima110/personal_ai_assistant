@@ -79,7 +79,21 @@ st.markdown(
         min-height: 92vh; }
       header[data-testid="stHeader"] { background: transparent; }
       #MainMenu, footer { visibility: hidden; }
-      section[data-testid="stSidebar"] { border-right: 1px solid #e9edf2; }
+      section[data-testid="stSidebar"] { border-right: 1px solid #e2e6ec; }
+
+      /* white "raised" cards on the light-grey page */
+      div[data-testid="stVerticalBlockBorderWrapper"] {
+        background: #ffffff; border-radius: 14px;
+        box-shadow: 0 1px 3px rgba(15,23,42,.06), 0 1px 2px rgba(15,23,42,.04);
+      }
+      div[data-testid="stVerticalBlockBorderWrapper"] > div { border-color: #e6e8ec !important; }
+      div[data-testid="stChatMessage"] {
+        background: #ffffff; border: 1px solid #e6e8ec; border-radius: 12px;
+      }
+      div[data-testid="stTabs"] {
+        background:#ffffff; border:1px solid #e6e8ec; border-radius:14px;
+        padding: .3rem 1.1rem 1.1rem; box-shadow: 0 1px 3px rgba(15,23,42,.05);
+      }
 
       .appbar {
         background: #0f172a;
