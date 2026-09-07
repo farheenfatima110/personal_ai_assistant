@@ -80,26 +80,21 @@ st.markdown(
       #MainMenu, footer { visibility: hidden; }
       section[data-testid="stSidebar"] { border-right: 1px solid #e9edf2; }
 
-      .hdr-title { font-size: 1.55rem; font-weight: 800; letter-spacing: -.02em; margin: 0; }
-      .hdr-sub   { color:#64748b; font-size:.9rem; margin:.25rem 0 0; }
-      .status-pill {
-        display:inline-flex; align-items:center; gap:.45rem; float:right;
-        background:#ecfdf5; border:1px solid #a7f3d0; color:#047857;
-        font-size:.78rem; font-weight:600; padding:.3rem .7rem; border-radius:999px;
-      }
-      .status-dot { width:7px; height:7px; border-radius:50%; background:#10b981; }
+      .hdr-title { font-size: 2.1rem; font-weight: 800; letter-spacing: -.03em;
+        margin: 0; line-height: 1.15; }
+      .hdr-sub   { color:#64748b; font-size:.95rem; margin:.4rem 0 0; }
 
-      .kpi-label { font-size:.7rem; font-weight:700; letter-spacing:.07em;
-        text-transform:uppercase; color:#64748b; margin:0; }
-      .kpi-value { font-size:1.9rem; font-weight:800; color:#0f172a; line-height:1.15;
-        margin:.1rem 0 0; letter-spacing:-.02em; }
-      .kpi-sub   { font-size:.78rem; color:#64748b; margin:.15rem 0 0; }
+      .kpi-label { font-size:.68rem; font-weight:700; letter-spacing:.06em;
+        text-transform:uppercase; color:#64748b; margin:0; white-space:nowrap; }
+      .kpi-value { font-size:1.85rem; font-weight:800; color:#0f172a; line-height:1.15;
+        margin:.15rem 0 .1rem; letter-spacing:-.02em; }
+      .kpi-sub   { font-size:.78rem; color:#64748b; margin:0; }
 
       .hero { text-align:center; padding:1.6rem 1rem .4rem; }
       .hero-badge { width:56px; height:56px; border-radius:16px; margin:0 auto .8rem;
         display:flex; align-items:center; justify-content:center; font-size:1.7rem;
         background:#eef2ff; border:1px solid #e0e7ff; }
-      .hero h2 { font-size:1.4rem; font-weight:800; margin:0 0 .3rem; letter-spacing:-.02em; }
+      .hero h2 { font-size:1.25rem; font-weight:700; margin:0 0 .3rem; letter-spacing:-.01em; }
       .hero p  { color:#64748b; font-size:.92rem; margin:0 auto; max-width:520px; }
 
       .section-label { font-size:.72rem; font-weight:700; letter-spacing:.08em;
@@ -208,7 +203,6 @@ with st.sidebar:
 
 # ------------------------------------------------------------------ header
 st.markdown(
-    '<span class="status-pill"><span class="status-dot"></span>Agent online</span>'
     '<p class="hdr-title">🎓 Student Study &amp; Productivity Assistant</p>'
     '<p class="hdr-sub">One CrewAI agent · 8 tools · local RAG over your notes · '
     'web research · calculator · long-term memory</p>',
@@ -226,12 +220,15 @@ def kpi(col, label: str, value: str, sub: str) -> None:
         )
 
 
-ka, kb_, kc, kd = st.columns(4, gap="small")
-kpi(ka, "Notes indexed", str(kb_stats["chunks"]),
-    f'{len(kb_stats["sources"])} file(s) · {kb_stats["chunks"]} chunks')
-kpi(kb_, "Tools ready", str(len(TOOLS)), "RAG · web · memory · maths")
-kpi(kc, "Memory", str(len(facts)), "facts saved about you")
-kpi(kd, "This session", str(len(st.session_state.messages) // 2), "questions answered")
+r1a, r1b = st.columns(2, gap="small")
+kpi(r1a, "Notes indexed", str(kb_stats["chunks"]),
+    f'{len(kb_stats["sources"])} file · {kb_stats["chunks"]} chunks embedded locally')
+kpi(r1b, "Tools ready", str(len(TOOLS)),
+    "RAG · web search · Wikipedia · weather · maths · memory")
+r2a, r2b = st.columns(2, gap="small")
+kpi(r2a, "Memory", str(len(facts)), "facts saved about you across sessions")
+kpi(r2b, "This session", str(len(st.session_state.messages) // 2),
+    "questions answered so far")
 
 st.write("")
 tab_chat, tab_kb, tab_tools, tab_about = st.tabs(
