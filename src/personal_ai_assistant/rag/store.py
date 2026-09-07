@@ -169,6 +169,12 @@ class KnowledgeBase:
     def is_empty(self) -> bool:
         return not self._chunks
 
+    def stats(self) -> dict:
+        return {
+            "chunks": len(self._chunks),
+            "sources": sorted(set(self._sources)),
+        }
+
 
 @lru_cache(maxsize=1)
 def get_knowledge_base() -> KnowledgeBase:
