@@ -82,19 +82,19 @@ st.markdown(
       section[data-testid="stSidebar"] { border-right: 1px solid #e9edf2; }
 
       .appbar {
-        background: linear-gradient(120deg, #4f46e5 0%, #7c3aed 60%, #9333ea 100%);
-        border-radius: 18px; padding: 1.7rem 1.9rem; margin-bottom: 1.5rem;
-        box-shadow: 0 10px 30px -12px rgba(79,70,229,.45);
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 16px; padding: 1.7rem 1.9rem; margin-bottom: 1.5rem;
       }
-      .appbar-eyebrow { color:#c7d2fe; font-size:.72rem; font-weight:700;
-        letter-spacing:.14em; text-transform:uppercase; margin:0 0 .35rem; }
-      .appbar h1 { color:#fff; font-size:2.15rem; font-weight:800; margin:0;
+      .appbar-eyebrow { color:#818cf8; font-size:.72rem; font-weight:700;
+        letter-spacing:.14em; text-transform:uppercase; margin:0 0 .4rem; }
+      .appbar h1 { color:#f8fafc; font-size:2.15rem; font-weight:800; margin:0;
         letter-spacing:-.03em; line-height:1.12; }
-      .appbar p  { color:#e0e7ff; font-size:.92rem; margin:.55rem 0 0; max-width:640px; }
-      .appbar-tags { margin-top:.9rem; display:flex; flex-wrap:wrap; gap:.4rem; }
-      .appbar-tag { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22);
-        color:#f5f3ff; font-size:.75rem; font-weight:600; padding:.25rem .6rem;
-        border-radius:999px; }
+      .appbar p  { color:#94a3b8; font-size:.92rem; margin:.55rem 0 0; max-width:640px; }
+      .appbar-tags { margin-top:1rem; display:flex; flex-wrap:wrap; gap:.4rem; }
+      .appbar-tag { background:#1e293b; border:1px solid #334155;
+        color:#cbd5e1; font-size:.75rem; font-weight:600; padding:.25rem .65rem;
+        border-radius:8px; }
 
       .kpi-label { font-size:.68rem; font-weight:700; letter-spacing:.06em;
         text-transform:uppercase; color:#64748b; margin:0; white-space:nowrap; }
