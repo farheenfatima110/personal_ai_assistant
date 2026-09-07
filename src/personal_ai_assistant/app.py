@@ -75,14 +75,26 @@ st.markdown(
       html, body, [class*="css"], .stMarkdown, .stButton button {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       }
-      .block-container { padding-top: 2rem; padding-bottom: 2rem; max-width: 1080px;
+      .block-container { padding-top: 1.4rem; padding-bottom: 2rem; max-width: 1080px;
         min-height: 92vh; }
+      header[data-testid="stHeader"] { background: transparent; }
       #MainMenu, footer { visibility: hidden; }
       section[data-testid="stSidebar"] { border-right: 1px solid #e9edf2; }
 
-      .hdr-title { font-size: 2.1rem; font-weight: 800; letter-spacing: -.03em;
-        margin: 0; line-height: 1.15; }
-      .hdr-sub   { color:#64748b; font-size:.95rem; margin:.4rem 0 0; }
+      .appbar {
+        background: linear-gradient(120deg, #4f46e5 0%, #7c3aed 60%, #9333ea 100%);
+        border-radius: 18px; padding: 1.7rem 1.9rem; margin-bottom: 1.5rem;
+        box-shadow: 0 10px 30px -12px rgba(79,70,229,.45);
+      }
+      .appbar-eyebrow { color:#c7d2fe; font-size:.72rem; font-weight:700;
+        letter-spacing:.14em; text-transform:uppercase; margin:0 0 .35rem; }
+      .appbar h1 { color:#fff; font-size:2.15rem; font-weight:800; margin:0;
+        letter-spacing:-.03em; line-height:1.12; }
+      .appbar p  { color:#e0e7ff; font-size:.92rem; margin:.55rem 0 0; max-width:640px; }
+      .appbar-tags { margin-top:.9rem; display:flex; flex-wrap:wrap; gap:.4rem; }
+      .appbar-tag { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22);
+        color:#f5f3ff; font-size:.75rem; font-weight:600; padding:.25rem .6rem;
+        border-radius:999px; }
 
       .kpi-label { font-size:.68rem; font-weight:700; letter-spacing:.06em;
         text-transform:uppercase; color:#64748b; margin:0; white-space:nowrap; }
@@ -203,12 +215,22 @@ with st.sidebar:
 
 # ------------------------------------------------------------------ header
 st.markdown(
-    '<p class="hdr-title">🎓 Student Study &amp; Productivity Assistant</p>'
-    '<p class="hdr-sub">One CrewAI agent · 8 tools · local RAG over your notes · '
-    'web research · calculator · long-term memory</p>',
+    '<div class="appbar">'
+    '<p class="appbar-eyebrow">🎓 CrewAI · Multi-tool agent</p>'
+    "<h1>Student Study &amp; Productivity Assistant</h1>"
+    "<p>Ask questions about your own lecture notes, research the web, run "
+    "calculations, and keep track of your deadlines — one agent that picks the "
+    "right tool for every request.</p>"
+    '<div class="appbar-tags">'
+    '<span class="appbar-tag">Local RAG</span>'
+    '<span class="appbar-tag">Web search</span>'
+    '<span class="appbar-tag">Wikipedia</span>'
+    '<span class="appbar-tag">Weather</span>'
+    '<span class="appbar-tag">Calculator</span>'
+    '<span class="appbar-tag">Long-term memory</span>'
+    "</div></div>",
     unsafe_allow_html=True,
 )
-st.write("")
 
 
 def kpi(col, label: str, value: str, sub: str) -> None:
