@@ -1,6 +1,6 @@
 # 🎓 Student Study & Productivity Assistant
 
-### 🔗 [**Open the live app →**](https://crewai-study-copilot.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://crewai-study-copilot.streamlit.app/)
 
 A **personal AI assistant that understands natural-language requests and executes
 them using tools and APIs**, built as a coordinated **multi-agent CrewAI** system.
